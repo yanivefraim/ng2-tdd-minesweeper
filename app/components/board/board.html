@@ -1,7 +1,7 @@
 <table>
   <tr class="row" *ng-for="#row of cells">
     <td class="cell" *ng-for="#cell of row">
-    {{cell}}
+      <cell [data]=cell></cell>
     </td>
   </tr>
 </table>
