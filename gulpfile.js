@@ -161,11 +161,23 @@ gulp.task('build.dev', function (done) {
 // --------------
 // Post install
 
-gulp.task('install.typings', ['clean.tsd_typings'], shell.task([
-  './node_modules/.bin/tsd reinstall --overwrite',
-  './node_modules/.bin/tsd link',
-  './node_modules/.bin/tsd rebundle'
-]));
+var isWin = /^win/.test(process.platform);
+var shellTasks;
+if (isWin) {
+    shellTasks = [
+		'.\\node_modules\\.bin\\tsd reinstall --overwrite',
+		'.\\node_modules\\.bin\\tsd link',
+		'.\\node_modules\\.bin\\tsd rebundle'
+    ];
+}
+else {
+    shellTasks = [
+	  './node_modules/.bin/tsd reinstall --overwrite',
+	  './node_modules/.bin/tsd link',
+	  './node_modules/.bin/tsd rebundle'
+    ];
+}
+gulp.task('install.typings', ['clean.tsd_typings'], shell.task(shellTasks));	
 
 gulp.task('postinstall', function (done) {
   runSequence('install.typings', done);
