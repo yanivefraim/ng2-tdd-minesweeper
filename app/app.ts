@@ -3,16 +3,12 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_BINDINGS} from 'angular2/router';
 import {Board} from './components/board/board';
 // import {HTTP_BINDINGS} from 'http/http';
 
-import {About} from './components/about/about';
-import {NamesList} from './services/NameList';
 
 @Component({
-  selector: 'app',
-  viewBindings: [NamesList]
+  selector: 'app'
 })
 @RouteConfig([
-  { path: '/', component: Board, as: 'board' },
-  { path: '/about', component: About, as: 'about' }
+  { path: '/', component: Board, as: 'board' }
 ])
 @View({
   templateUrl: './app.html',
