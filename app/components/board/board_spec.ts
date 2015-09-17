@@ -30,6 +30,38 @@ export function main() {
           let board = new Board(mockservice);
           expect(board.cells).toEqual(testArray);
         });
+        it('should gemerate component cells',
+          inject([TestComponentBuilder, AsyncTestCompleter], (tcb: TestComponentBuilder, async) => {
+            tcb.overrideTemplate(TestComponent, '<div><board></board></div>')
+              .createAsync(TestComponent)
+              .then((rootTC) => {
+                rootTC.detectChanges();
+
+                var boardInstance = rootTC.componentViewChildren[0].componentInstance;
+                var boardDOMEl = rootTC.componentViewChildren[0].nativeElement;
+                var mineListLen = function () {
+                  return boardInstance.cells.length;
+                }
+
+                //expect(aboutInstance.list).toEqual(jasmine.any(NamesList));
+                //expect(mineListLen()).toEqual(4);
+
+                expect(DOM.querySelectorAll(boardDOMEl, 'tr').length).toEqual(mineListLen());
+
+                // aboutInstance.addName({value: 'Minko'});
+                // rootTC.detectChanges();
+
+                // expect(nameListLen()).toEqual(5);
+                // expect(DOM.querySelectorAll(aboutDOMEl, 'li').length).toEqual(nameListLen());
+
+                // expect(DOM.querySelectorAll(aboutDOMEl, 'li')[4].textContent).toEqual('Minko');
+
+                async.done();
+              });
+          }));
     });
 };
 
+@Component({ selector: 'test-cmp' })
+@View({ directives: [Board] })
+class TestComponent { }
