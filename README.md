@@ -13,6 +13,7 @@ We did not have time to write the game, so we wanted to build the main component
 2. Testing the Component felt similar to testing an Angular 1.x directive
 3. We had a lot of new Jasmine / Unit test stuff (arriving with [angular-seed](https://github.com/mgechev/angular2-seed) project). It was different from what we know on Angular 1.x. We would like to better understand how ```AsyncTestCompleter``` and ```TestComponentBuilder``` works.
 4. Console error messages are hard to read /debug (much harder than Angular 1.X).
+5. Unit testing with native ```DOM.querySelectorAll``` is cool (:
 
 
 
