@@ -18,7 +18,7 @@ We did not have time to write the game, so we wanted to build the main component
 
 
 #Comments
-1. Windows users - the following issues when running "npm install" (related to angular-seed)
+1. Windows users - the following issues when running "npm install" (related to angular-seed). We fixed it (will add a PR to ```mgechev```)
 	'.' is not recognized as an internal or external command
 	To fix that need to change lines 165,166,167 to Windows style path for example: 
 		'.\\node_modules\\.bin\\tsd reinstall --overwrite'
