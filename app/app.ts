@@ -1,8 +1,8 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_BINDINGS} from 'angular2/router';
+import {Board} from './components/board/board';
 // import {HTTP_BINDINGS} from 'http/http';
 
-import {Home} from './components/home/home';
 import {About} from './components/about/about';
 import {NamesList} from './services/NameList';
 
@@ -11,7 +11,7 @@ import {NamesList} from './services/NameList';
   viewBindings: [NamesList]
 })
 @RouteConfig([
-  { path: '/', component: Home, as: 'home' },
+  { path: '/', component: Board, as: 'board' },
   { path: '/about', component: About, as: 'about' }
 ])
 @View({

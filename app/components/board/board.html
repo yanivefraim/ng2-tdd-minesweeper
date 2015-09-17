@@ -1,0 +1,9 @@
+<!-- <input class="game-name" type="text" ng-model="game.name"></input>
+<button class="save-game" ng-click="game.save()"> Save</button> -->
+<table>
+  <tr class="row" *ng-for="#row of cells">
+    <td class="cell" *ng-for="#cell of row">
+    {{cell}}
+    </td>
+  </tr>
+</table>
