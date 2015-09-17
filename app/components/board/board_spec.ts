@@ -43,18 +43,7 @@ export function main() {
                   return boardInstance.cells.length;
                 }
 
-                //expect(aboutInstance.list).toEqual(jasmine.any(NamesList));
-                //expect(mineListLen()).toEqual(4);
-
                 expect(DOM.querySelectorAll(boardDOMEl, 'tr').length).toEqual(mineListLen());
-
-                // aboutInstance.addName({value: 'Minko'});
-                // rootTC.detectChanges();
-
-                // expect(nameListLen()).toEqual(5);
-                // expect(DOM.querySelectorAll(aboutDOMEl, 'li').length).toEqual(nameListLen());
-
-                // expect(DOM.querySelectorAll(aboutDOMEl, 'li')[4].textContent).toEqual('Minko');
 
                 async.done();
               });
